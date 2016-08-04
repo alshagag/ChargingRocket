@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">ChargingRocket</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_name">الشحن الصاروخي</string>
+    <string name="num_card">رقم البطاقة</string>
+    <string name="num_id">رقم الهوية :</string>
+    <string name="network">الشبكة</string>
+    <string name="recharge">اشحن</string>
+    <string name="home">الرئيسية</string>
 </resources>
