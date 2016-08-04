@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    //return getResources().getString(R.string.home);
+                    return getResources().getString(R.string.home);
 
             }
             return null;
