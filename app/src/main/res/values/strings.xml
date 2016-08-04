@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">الشحن الصاروخي</string>
-    <string name="num_card">رقم البطاقة</string>
+    <string name="num_card">رقم البطاقة :</string>
     <string name="num_id">رقم الهوية :</string>
-    <string name="network">الشبكة</string>
+    <string name="network">الشبكة :</string>
     <string name="recharge">اشحن</string>
     <string name="home">الرئيسية</string>
     <string name="action_settings"></string>
