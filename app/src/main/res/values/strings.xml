@@ -5,4 +5,5 @@
     <string name="network">الشبكة</string>
     <string name="recharge">اشحن</string>
     <string name="home">الرئيسية</string>
+    <string name="action_settings"></string>
 </resources>
