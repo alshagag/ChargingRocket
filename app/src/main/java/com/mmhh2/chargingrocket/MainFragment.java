@@ -1,7 +1,6 @@
 package com.mmhh2.chargingrocket;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -99,7 +98,10 @@ public class MainFragment extends Fragment {
         super.onStart();
         loadData();
     }
-
+    public void onPause() {
+        super.onPause();
+        saveData();
+    }
     protected void loadData() {
         Context context = getActivity();
         SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
