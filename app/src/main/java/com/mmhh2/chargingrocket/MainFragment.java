@@ -32,7 +32,6 @@ public class MainFragment extends Fragment {
     protected RadioButton RadBuSTC, RadBuMobily, RadBuZain;
     protected Button BuRecharge;
     private String numCard, numID, type, number;
-    private static int typeNumberCharge;
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge = 0;
 
@@ -195,7 +194,7 @@ public class MainFragment extends Fragment {
 
 
     public String setVariables(Context context) {
-
+          int typeNumberCharge;
 
         try {
 
