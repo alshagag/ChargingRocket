@@ -35,7 +35,6 @@ public class MainFragment extends Fragment {
     private String numCard, numID, type, number;
     private static int typeNumberCharge;
     private static final String ARG_SECTION_NUMBER = "section_number";
-    Context context = getActivity();
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge = 0;
 
 
@@ -66,7 +65,7 @@ public class MainFragment extends Fragment {
         RadBuMobily = (RadioButton) rootView.findViewById(R.id.RadBuMobily);
         RadBuZain = (RadioButton) rootView.findViewById(R.id.RadBuZain);
         BuRecharge = (Button) rootView.findViewById(R.id.BuRecharge);
-
+        final Context context = getActivity();
 
         BuRecharge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +111,7 @@ public class MainFragment extends Fragment {
         } else if (type.equals("mobily")) {
             RadBuMobily.setChecked(true);
         } else if (type.equals("zain")) {
-            RadBuMobily.setChecked(true);
+            RadBuZain.setChecked(true);
         }
 
     }
@@ -216,6 +215,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
+        Context context = getActivity();
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge: {
                 // If request is cancelled, the result arrays are empty.

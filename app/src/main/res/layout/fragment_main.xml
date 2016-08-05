@@ -150,7 +150,8 @@
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/buttonstyle"
                     android:textColor="@color/abc_tint_switch_thumb"
-                    android:textSize="23dp" />
+                    android:textSize="23dp"
+                    android:textColorLink="@color/design_fab_shadow_mid_color" />
 
             </LinearLayout>
         </RelativeLayout>
