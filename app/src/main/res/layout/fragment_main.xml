@@ -36,15 +36,6 @@
                     android:contentDescription="Mobile" />
             </LinearLayout>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/recharge"
-                android:id="@+id/BuRecharge"
-                android:layout_marginTop="23dp"
-                android:layout_below="@+id/LiLNetworks"
-                android:layout_centerHorizontal="true" />
-
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -147,6 +138,16 @@
                         android:layout_weight="0.3" />
 
                 </RadioGroup>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recharge"
+                    android:id="@+id/BuRecharge"
+                    android:layout_marginTop="23dp"
+                    android:layout_below="@+id/LiLNetworks"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal" />
 
             </LinearLayout>
         </RelativeLayout>
