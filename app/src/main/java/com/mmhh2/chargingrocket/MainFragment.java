@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 
@@ -28,8 +27,7 @@ public class MainFragment extends Fragment {
      * The fragment argument representing the section number for this
      * fragment.
      */
-    protected EditText EdTNumCard, EdTNumID;
-    protected RadioButton RadBuSTC, RadBuMobily, RadBuZain;
+    protected EditText EdTNumCard;
     protected Button BuRecharge;
     private String numCard, numID, type, number;
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -58,17 +56,13 @@ public class MainFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         EdTNumCard = (EditText) rootView.findViewById(R.id.EdTNumCard);
-        EdTNumID = (EditText) rootView.findViewById(R.id.EdTNumID);
-        RadBuSTC = (RadioButton) rootView.findViewById(R.id.RadBuSTC);
-        RadBuMobily = (RadioButton) rootView.findViewById(R.id.RadBuMobily);
-        RadBuZain = (RadioButton) rootView.findViewById(R.id.RadBuZain);
         BuRecharge = (Button) rootView.findViewById(R.id.BuRecharge);
         final Context context = getActivity();
 
         BuRecharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveData();
+                numCard = EdTNumCard.getText().toString();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                         if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
@@ -94,54 +88,16 @@ public class MainFragment extends Fragment {
         super.onStart();
         loadData();
     }
-    public void onPause() {
-        super.onPause();
-        saveData();
-    }
+
     protected void loadData() {
         Context context = getActivity();
         SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         type = sharedPref.getString("type", null);
         numID = sharedPref.getString("numID", null);
-        EdTNumID.setText(numID);
-        try {
-            if (type.equals("stc")) {
-                RadBuSTC.setChecked(true);
-            } else if (type.equals("mobily")) {
-                RadBuMobily.setChecked(true);
-            } else if (type.equals("zain")) {
-                RadBuZain.setChecked(true);
-            }
 
 
-        } catch (Exception ex){
-            Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
-        }
     }
 
-    protected void saveData() {
-        numCard = EdTNumCard.getText().toString();
-        numID = EdTNumID.getText().toString();
-        type = setType();
-        Context context = getActivity();
-        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("type", type);
-        editor.putString("numID", numID);
-        editor.commit();
-    }
-
-    protected String setType() {
-        if (RadBuSTC.isChecked()) {
-            return "stc";
-        } else if (RadBuMobily.isChecked()) {
-            return "mobily";
-        } else if (RadBuZain.isChecked()) {
-            return "zain";
-        } else {
-            return "none";
-        }
-    }
 
     protected Intent call(String number) {
         Intent i = new Intent(Intent.ACTION_CALL, Uri.fromParts("tel", number, null));
