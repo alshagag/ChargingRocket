@@ -115,7 +115,9 @@ public class MainFragment extends Fragment {
         } else if (type.equals("zain")) {
             RadBuZain.setChecked(true);
         }
-
+        else {
+            Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
+        }
     }
 
     protected void saveData() {
@@ -208,7 +210,7 @@ public class MainFragment extends Fragment {
             }
 
         } catch (Exception ex) {
-            Toast.makeText(context, "لم تحدد نوع الشريحة", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
 
         }
         return "none";
