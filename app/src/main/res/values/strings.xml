@@ -6,4 +6,5 @@
     <string name="recharge">اشحن</string>
     <string name="home">الرئيسية</string>
     <string name="action_settings"></string>
+    <string name="preference_file_key">com.mmhh2.chargeingrocket.mainfragment.SAVEDATA</string>
 </resources>
