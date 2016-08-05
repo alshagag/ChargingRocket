@@ -58,7 +58,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/RadBuZain"
+                android:id="@+id/RadBuSTC"
                 android:layout_marginLeft="10dp"
                 android:drawableLeft="@drawable/stc"
                 android:layout_weight="0.3" />
@@ -74,7 +74,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/RadBuSTC"
+                android:id="@+id/RadBuZain"
                 android:layout_marginLeft="10dp"
                 android:drawableLeft="@drawable/zainsa"
                 android:layout_weight="0.3" />
