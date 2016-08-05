@@ -69,9 +69,6 @@ public class MainFragment extends Fragment {
         BuRecharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numCard = EdTNumCard.getText().toString();
-                numID = EdTNumID.getText().toString();
-                type = setType();
                 saveData();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -108,19 +105,25 @@ public class MainFragment extends Fragment {
         type = sharedPref.getString("type", null);
         numID = sharedPref.getString("numID", null);
         EdTNumID.setText(numID);
-        if (type.equals("stc")) {
-            RadBuSTC.setChecked(true);
-        } else if (type.equals("mobily")) {
-            RadBuMobily.setChecked(true);
-        } else if (type.equals("zain")) {
-            RadBuZain.setChecked(true);
-        }
-        else {
+        try {
+            if (type.equals("stc")) {
+                RadBuSTC.setChecked(true);
+            } else if (type.equals("mobily")) {
+                RadBuMobily.setChecked(true);
+            } else if (type.equals("zain")) {
+                RadBuZain.setChecked(true);
+            }
+
+
+        } catch (Exception ex){
             Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
         }
     }
 
     protected void saveData() {
+        numCard = EdTNumCard.getText().toString();
+        numID = EdTNumID.getText().toString();
+        type = setType();
         Context context = getActivity();
         SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
