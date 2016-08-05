@@ -86,13 +86,13 @@ import android.widget.RadioButton;
         type = sharedPref.getString("type",null);
         numID = sharedPref.getString("numID",null);
         EdTNumID.setText(numID);
-        if (type == "stc"){
+        if (type.equals("stc")){
             RadBuSTC.setChecked(true);
         }
-        else if (type == "mobliy"){
+        else if (type.equals("mobily")){
             RadBuMobily.setChecked(true);
         }
-        else if (type == "zain"){
+        else if (type.equals("zain")){
             RadBuMobily.setChecked(true);
         }
 
