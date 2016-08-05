@@ -12,4 +12,6 @@
     <string name="IDNumIncorrect">رقم الهوية غير صحيح</string>
     <string name="action_settings"></string>
     <string name="preference_file_key">com.mmhh2.chargeingrocket.mainfragment.SAVEDATA</string>
+    <string name="settings">الاعدادات</string>
+
 </resources>
