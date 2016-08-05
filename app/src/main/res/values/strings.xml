@@ -5,6 +5,10 @@
     <string name="network">الشبكة :</string>
     <string name="recharge">اشحن</string>
     <string name="home">الرئيسية</string>
+    <string name="balance">رصيدي</string>
+    <string name="talk_me">كلمني</string>
+    <string name="conver">تحويل</string>
+    <string name="services">خدمات</string>
     <string name="noneNetwork">لم تحدد نوع الشريحة</string>
     <string name="noneIDumber">لا يوجد رقم هوية</string>
     <string name="CardNumShort">رقم البطاقة قصير جداً</string>
@@ -13,5 +17,4 @@
     <string name="action_settings"></string>
     <string name="preference_file_key">com.mmhh2.chargeingrocket.mainfragment.SAVEDATA</string>
     <string name="settings">الاعدادات</string>
-
 </resources>

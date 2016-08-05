@@ -66,28 +66,6 @@
                         android:layout_weight="1" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/LiLNumID"
-                    android:layout_marginTop="36dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/num_id"
-                        android:id="@+id/TVNumID" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:ems="10"
-                        android:id="@+id/EdTNumID"
-                        android:layout_weight="1" />
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -150,8 +128,7 @@
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/buttonstyle"
                     android:textColor="@color/abc_tint_switch_thumb"
-                    android:textSize="23dp"
-                    android:textColorLink="@color/design_fab_shadow_mid_color" />
+                    android:textSize="23dp" />
 
             </LinearLayout>
         </RelativeLayout>

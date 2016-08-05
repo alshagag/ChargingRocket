@@ -7,4 +7,106 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.mmhh2.chargingrocket.SettingsFragment"></RelativeLayout>
+    tools:context="com.mmhh2.chargingrocket.SettingsFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/LiLSettings"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ImVSettings"
+            android:background="@drawable/settings" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/settings"
+            android:id="@+id/TVSettings"
+            android:textColor="@color/material_blue_grey_800"
+            android:textSize="30sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LiLNetworks"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/LiLNumID"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/network"
+            android:id="@+id/TVNetwork" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RadGroNetworks"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuZain"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/stc"
+                android:layout_weight="0.3" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuMobily"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/mobily"
+                android:layout_weight="0.3" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuSTC"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/zainsa"
+                android:layout_weight="0.3" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LiLNumID"
+        android:layout_below="@+id/LiLSettings"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/num_id"
+            android:id="@+id/TVNumID" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/EdTNumID"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</RelativeLayout>
