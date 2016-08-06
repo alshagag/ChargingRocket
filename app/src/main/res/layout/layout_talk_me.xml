@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="58dp"
+        android:id="@+id/LiLTalkMe">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/talk_me"
+            android:id="@+id/TVTalkMe"
+            android:layout_alignTop="@+id/LiLTalkMe"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/button_material_dark"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LiLNumPhone"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/numphone"
+                android:id="@+id/TVNumPhone" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/EdTNumPhone" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/talk_me"
+            android:id="@+id/BuTalkMe"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LiLServices"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="91dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/services"
+            android:id="@+id/TVServices" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RadGroServices"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuCharge"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.3"
+                android:text="@string/charge" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuTalkme"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.3"
+                android:text="@string/talk_me" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuConver"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.3"
+                android:text="@string/conver" />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/balance"
+            android:id="@+id/BuBalance"
+            android:layout_marginTop="23dp"
+            android:layout_below="@+id/LiLNetworks"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonstyle"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+
+    </LinearLayout>
+
+</RelativeLayout>
