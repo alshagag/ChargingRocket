@@ -26,124 +26,134 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true">
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:id="@+id/ImVMobile"
-                    android:background="@drawable/mobile"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:contentDescription="Mobile" />
             </LinearLayout>
 
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LiLServices"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="91dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/services"
+            android:id="@+id/TVServices" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RadGroServices"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuCharge"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.3"
+                android:text="@string/charge" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuTalkme"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.3"
+                android:text="@string/talk_me" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/RadBuConver"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.3"
+                android:text="@string/conver" />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/balance"
+            android:id="@+id/BuBalance"
+            android:layout_marginTop="23dp"
+            android:layout_below="@+id/LiLNetworks"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonstyle"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+
+    </LinearLayout>
+
+    <ViewSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewSwitcher"
+        android:layout_above="@+id/LiLServices"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LiL"
+            android:layout_below="@+id/LiLMobile"
+            android:layout_alignParentEnd="true"
+            android:gravity="center">
+
             <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/LiL"
-                android:layout_below="@+id/LiLMobile"
-                android:layout_alignParentEnd="true"
-                android:gravity="center">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/LiLNumCard">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/num_card"
-                        android:id="@+id/TVNumCard" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:ems="10"
-                        android:id="@+id/EdTNumCard"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recharge"
-                    android:id="@+id/BuRecharge"
-                    android:layout_marginTop="23dp"
-                    android:layout_below="@+id/LiLNetworks"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/buttonstyle"
-                    android:textColor="@color/abc_tint_switch_thumb"
-                    android:textSize="20dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/LiLServices"
-                android:layout_below="@+id/LiL"
-                android:layout_alignEnd="@+id/LiL"
-                android:layout_marginTop="24dp">
+                android:id="@+id/LiLNumCard">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/services"
-                    android:id="@+id/TVServices" />
+                    android:text="@string/num_card"
+                    android:id="@+id/TVNumCard" />
 
-                <RadioGroup
-                    android:layout_width="match_parent"
+                <EditText
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/RadGroServices"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/RadBuCharge"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.3"
-                        android:text="@string/charge" />
-
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/RadBuTalkme"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.3"
-                        android:text="@string/talk_me" />
-
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/RadBuConver"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.3"
-                        android:text="@string/conver" />
-
-                </RadioGroup>
-
-                <Button
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/balance"
-                    android:id="@+id/BuBalance"
-                    android:layout_marginTop="23dp"
-                    android:layout_below="@+id/LiLNetworks"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/buttonstyle"
-                    android:textSize="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/abc_primary_text_disable_only_material_dark" />
-
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/EdTNumCard"
+                    android:layout_weight="1" />
             </LinearLayout>
-        </RelativeLayout>
-    </ScrollView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recharge"
+                android:id="@+id/BuRecharge"
+                android:layout_marginTop="23dp"
+                android:layout_below="@+id/LiLNetworks"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/buttonstyle"
+                android:textColor="@color/abc_tint_switch_thumb"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+    </ViewSwitcher>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/ImVMobile"
+        android:background="@drawable/mobile"
+        android:contentDescription="Mobile"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
