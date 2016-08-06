@@ -8,6 +8,7 @@
     <string name="balance">رصيدي</string>
     <string name="talk_me">كلمني</string>
     <string name="conver">تحويل</string>
+    <string name="numconfer">رقم المحول له :</string>
     <string name="services">خدمات :</string>
     <string name="numphone">رقم الجوال :</string>
     <string name="amount">المبلغ :</string>
