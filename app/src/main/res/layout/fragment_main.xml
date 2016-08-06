@@ -40,7 +40,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/LiLNumCard_ID"
+                android:id="@+id/LiL"
                 android:layout_below="@+id/LiLMobile"
                 android:layout_alignParentEnd="true"
                 android:gravity="center">
@@ -85,9 +85,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/LiLNetworks"
-                android:layout_below="@+id/LiLNumCard_ID"
-                android:layout_alignEnd="@+id/LiLNumCard_ID"
+                android:id="@+id/LiLServices"
+                android:layout_below="@+id/LiL"
+                android:layout_alignEnd="@+id/LiL"
                 android:layout_marginTop="24dp">
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="@string/services"
-                    android:id="@+id/TVNetwork" />
+                    android:id="@+id/TVServices" />
 
                 <RadioGroup
                     android:layout_width="match_parent"
