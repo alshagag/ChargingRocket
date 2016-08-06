@@ -9,6 +9,8 @@
     <string name="talk_me">كلمني</string>
     <string name="conver">تحويل</string>
     <string name="services">خدمات :</string>
+    <string name="numphone">رقم الجوال :</string>
+    <string name="amount">المبلغ :</string>
     <string name="charge">الشحن</string>
     <string name="noneNetwork">لم تحدد نوع الشريحة</string>
     <string name="noneIDumber">لا يوجد رقم هوية</string>
