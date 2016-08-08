@@ -4,90 +4,10 @@
 
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/LiLMobile"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/ImVMobile"
-            android:background="@drawable/mobile"
-            android:contentDescription="Mobile"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LiLServices"
-        android:layout_below="@+id/LiLConver"
-        android:layout_alignParentEnd="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/services"
-            android:id="@+id/TVServices" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/RadGroServices"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/RadBuCharge"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.3"
-                android:text="@string/charge" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/RadBuTalkme"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.3"
-                android:text="@string/talk_me" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/RadBuConver"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.3"
-                android:text="@string/conver" />
-
-        </RadioGroup>
-
-        <Button
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="@string/balance"
-            android:id="@+id/BuBalance"
-            android:layout_marginTop="23dp"
-            android:layout_below="@+id/LiLNetworks"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/buttonstyle"
-            android:textSize="19dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LiLConver"
-        android:layout_below="@+id/LiLMobile"
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/BuConver">
 
