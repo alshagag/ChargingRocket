@@ -1,6 +1,7 @@
 package com.mmhh2.chargingrocket;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -46,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
+
 
     /*
     @Override
@@ -80,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -90,12 +95,11 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
 
             if (position == 0){
-                return MainFragment.newInstance(position + 1);
+                return MainFragment.newInstance();
             }
             else if (position == 1) {
-                return SettingsFragment.newInstance(position + 1);
+                return SettingsFragment.newInstance();
             }
-
             return null;
 
 

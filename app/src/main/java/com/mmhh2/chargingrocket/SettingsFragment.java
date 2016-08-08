@@ -18,7 +18,6 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
     protected RadioButton RadBuSTC, RadBuMobily, RadBuZain;
     protected EditText EdTNumID;
     private String  numID, type;
-    private static final String ARG_SECTION_NUMBER1 = "section_number1";
     public SettingsFragment() {
     }
 
@@ -26,10 +25,9 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static SettingsFragment newInstance(int sectionNumber) {
+    public static SettingsFragment newInstance() {
         SettingsFragment fragment = new SettingsFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER1, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
@@ -41,6 +39,7 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
         RadBuSTC = (RadioButton) rootView.findViewById(R.id.RadBuSTC);
         RadBuMobily = (RadioButton) rootView.findViewById(R.id.RadBuMobily);
         RadBuZain = (RadioButton) rootView.findViewById(R.id.RadBuZain);
+
         return rootView;
     }
 
@@ -87,15 +86,22 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
             Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
         }
     }
+
     @Override
-    public void onStart() {
-        super.onStart();
-        loadData();
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        // Make sure that we are currently visible
+        if (this.isVisible()) {
+            // If we are becoming invisible, then...
+            if (!isVisibleToUser) {
+                saveData();
+            }
+            else {
+                loadData();
+            }
+        }
     }
-        @Override
-    public void onPause() {
-        super.onPause();
-        saveData();
-    }
+
 
 }
