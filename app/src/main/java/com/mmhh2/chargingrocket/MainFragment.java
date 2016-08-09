@@ -35,7 +35,10 @@ public class MainFragment extends Fragment {
      * fragment.
      */
 
-    private String  numID, type;
+    private String  numID, type ,number;
+    private int  typeNumberInquire;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Balance = 1;
+    protected Button BuBalance;
 
 
     public MainFragment() {
@@ -59,12 +62,14 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        BuBalance = (Button)rootView.findViewById(R.id.BuBalance);
         RadioGroup RadGroServices = (RadioGroup)rootView.findViewById(R.id.RadGroServices);
         final RadioButton RadBuConver = (RadioButton)rootView.findViewById(R.id.RadBuConver);
         final RadioButton RadBuTalkMe = (RadioButton)rootView.findViewById(R.id.RadBuTalkme);
         final RadioButton RadBuCharge = (RadioButton)rootView.findViewById(R.id.RadBuCharge);
         final LinearLayout LiL = (LinearLayout)rootView.findViewById(R.id.LiL);
-        if(!RadGroServices.isClickable()){
+        final Context context = getActivity();
+        if(RadBuCharge.isChecked()){
             FragmentManager manager = getActivity().getSupportFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
             transaction.replace(R.id.LiL,new LayoutCharge(),"Charge");
@@ -96,7 +101,25 @@ public class MainFragment extends Fragment {
 
 
             }});
+        BuBalance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadData();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
+                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL_PHONE_Balance);
+                        }
 
+                        return;
+                    }
+                }
+                number = setVariablesBalance(context);
+                if (checkBalance(context)) {
+                    startActivity(call(number));
+                }
+            }
+        });
         return rootView;
     }
 
@@ -119,6 +142,79 @@ public class MainFragment extends Fragment {
         numID = sharedPref.getString("numID", null);
 
 
+    }
+    public boolean checkBalance(Context context) {
+        try {
+
+
+            if (!type.equals("none")) {
+                return true;
+            }
+            else {
+                Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception ex) {
+            Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return false;
+    }
+    public String setVariablesBalance( Context context) {
+        try {
+
+            switch (type) {
+                case "stc":
+                    typeNumberInquire = 166;
+                    return  number = "*" + typeNumberInquire + "#";
+
+
+                case "mobily":
+                    typeNumberInquire = 1411;
+                    return number = "*" + typeNumberInquire + "#";
+
+                case "zain":
+                    typeNumberInquire = 142;
+                    return  number = "*" + typeNumberInquire + "#";
+
+                default:
+                    break;
+            }
+        } catch (Exception ex) {
+            Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
+
+        }
+        return "none";
+    }
+    protected Intent call(String number) {
+        Intent i = new Intent(Intent.ACTION_CALL, Uri.fromParts("tel", number, null));
+        return i;
+    }
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        Context context = getActivity();
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_CALL_PHONE_Balance: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    number = setVariablesBalance(context);
+                    if (checkBalance(context)) {
+                        startActivity(call(number));
+                    }
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                break;
+            }
+
+
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 }
 

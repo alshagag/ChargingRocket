@@ -62,7 +62,8 @@
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:id="@+id/SPBalance" />
+                android:id="@+id/SPBalance"
+                android:entries="@array/num_amount" />
 
         </LinearLayout>
 
