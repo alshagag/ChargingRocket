@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -22,6 +23,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
@@ -39,6 +41,7 @@ public class MainFragment extends Fragment {
     private int  typeNumberInquire;
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Balance = 1;
     protected Button BuBalance;
+
 
 
     public MainFragment() {
@@ -62,19 +65,16 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
         BuBalance = (Button)rootView.findViewById(R.id.BuBalance);
         RadioGroup RadGroServices = (RadioGroup)rootView.findViewById(R.id.RadGroServices);
         final RadioButton RadBuConver = (RadioButton)rootView.findViewById(R.id.RadBuConver);
         final RadioButton RadBuTalkMe = (RadioButton)rootView.findViewById(R.id.RadBuTalkme);
         final RadioButton RadBuCharge = (RadioButton)rootView.findViewById(R.id.RadBuCharge);
         final LinearLayout LiL = (LinearLayout)rootView.findViewById(R.id.LiL);
+        final RelativeLayout ReL = (RelativeLayout)rootView.findViewById(R.id.ReL);
         final Context context = getActivity();
-        if(RadBuCharge.isChecked()){
-            FragmentManager manager = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.LiL,new LayoutCharge(),"Charge");
-            transaction.commit();
-        }
+
         RadGroServices.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -215,6 +215,15 @@ public class MainFragment extends Fragment {
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.LiL,new LayoutCharge(),"Charge");
+        transaction.commit();
     }
 }
 
