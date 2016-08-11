@@ -85,17 +85,17 @@
         </RadioGroup>
 
         <Button
-            android:layout_width="110dp"
+            android:layout_width="179dp"
             android:layout_height="wrap_content"
             android:text="@string/balance"
             android:id="@+id/BuBalance"
-            android:layout_marginTop="23dp"
             android:layout_below="@+id/LiLNetworks"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/buttonstyle"
-            android:textSize="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+            android:background="@drawable/buttonbalance"
+            android:textSize="20sp"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark"
+            android:layout_marginTop="23dp"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

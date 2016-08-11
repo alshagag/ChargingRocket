@@ -7,7 +7,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LiL"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/charge"
+            android:id="@+id/TVRecharge"
+            android:textColor="#5659C9"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:layout_marginRight="19dp"
+            android:layout_gravity="right" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -29,6 +43,7 @@
                 android:ems="10"
                 android:id="@+id/EdTNumCard"
                 android:layout_weight="1" />
+
         </LinearLayout>
 
         <Button
@@ -37,9 +52,10 @@
             android:text="@string/recharge"
             android:id="@+id/BuRecharge"
             android:layout_marginTop="23dp"
-            android:background="@drawable/buttonstyle"
+            android:background="@drawable/stylenew"
             android:textColor="@color/abc_tint_switch_thumb"
             android:textSize="20sp" />
 
     </LinearLayout>
+
 </RelativeLayout>

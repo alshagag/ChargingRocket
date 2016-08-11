@@ -103,7 +103,6 @@ public class LayoutCharge extends Fragment {
     public boolean checkCharge(Context context) {
         try {
 
-
             if (numID.equals(null)) {
                 Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
                 return false;
