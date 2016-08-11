@@ -118,13 +118,13 @@ public class LayoutTalkMe extends Fragment {
 
             if (type.equals("stc")) {
                 typeNumberTalkMe = 177;
-                return "*" + typeNumberTalkMe + "*" + numPhone + "*" + "#";
+                return "*" + typeNumberTalkMe + "*" + numPhone + "#";
             } else if (type.equals("mobily")) {
                 typeNumberTalkMe = 199;
-                return "*" + typeNumberTalkMe + "*" + numPhone + "*" + "#";
+                return "*" + typeNumberTalkMe + "*" + numPhone  + "#";
             } else if (type.equals("zain")) {
                 typeNumberTalkMe = 123;
-                return "*" + typeNumberTalkMe + "*" + numPhone + "*" + "#";
+                return "*" + typeNumberTalkMe + "*" + numPhone  + "#";
             } else {
                 return "none";
             }

@@ -166,16 +166,16 @@ public class MainFragment extends Fragment {
             switch (type) {
                 case "stc":
                     typeNumberInquire = 166;
-                    return  number = "*" + typeNumberInquire + "#";
+                    return "*" + typeNumberInquire + "#";
 
 
                 case "mobily":
                     typeNumberInquire = 1411;
-                    return number = "*" + typeNumberInquire + "#";
+                    return "*" + typeNumberInquire + "#";
 
                 case "zain":
                     typeNumberInquire = 142;
-                    return  number = "*" + typeNumberInquire + "#";
+                    return  "*" + typeNumberInquire + "#";
 
                 default:
                     break;
