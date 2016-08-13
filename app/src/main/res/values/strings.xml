@@ -22,6 +22,7 @@
     <string name="preference_file_key">com.mmhh2.chargeingrocket.mainfragment.SAVEDATA</string>
     <string name="settings">الاعدادات</string>
     <string-array name="num_amount">
+        <item>اختر مبلغ التحويل</item>
         <item>5 ريال</item>
         <item>10 ريال</item>
         <item>15 ريال</item>

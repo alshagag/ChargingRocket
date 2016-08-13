@@ -144,7 +144,8 @@ public class LayoutTalkMe extends Fragment {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
+                    loadData();
+                    numPhone = EdTNumPhone.getText().toString();
                     number = setVariablesTalkMe(context);
                     if (checkTalkMe(context)) {
                         startActivity(call(number));

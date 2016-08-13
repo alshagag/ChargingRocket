@@ -47,7 +47,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/LiLBalance"
             android:weightSum="1">
@@ -59,10 +59,14 @@
                 android:text="@string/amount"
                 android:id="@+id/TVBal" />
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:id="@+id/SPBalance" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/EdTBalance"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
 
         </LinearLayout>
 
@@ -79,16 +83,6 @@
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
-    <!--
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/EdTBalance"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="66dp" />
-        -->
+
 
 </RelativeLayout>

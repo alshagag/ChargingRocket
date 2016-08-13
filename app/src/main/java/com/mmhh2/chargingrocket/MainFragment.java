@@ -40,6 +40,10 @@ public class MainFragment extends Fragment {
     private String  numID, type ,number;
     private int  typeNumberInquire;
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Balance = 1;
+    protected  RadioGroup RadGroServices;
+    protected RadioButton RadBuCharge,RadBuConver,RadBuTalkMe;
+    protected LinearLayout LiL;
+
     protected Button BuBalance;
 
 
@@ -67,23 +71,29 @@ public class MainFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         BuBalance = (Button)rootView.findViewById(R.id.BuBalance);
-        RadioGroup RadGroServices = (RadioGroup)rootView.findViewById(R.id.RadGroServices);
-        final RadioButton RadBuConver = (RadioButton)rootView.findViewById(R.id.RadBuConver);
-        final RadioButton RadBuTalkMe = (RadioButton)rootView.findViewById(R.id.RadBuTalkme);
-        final RadioButton RadBuCharge = (RadioButton)rootView.findViewById(R.id.RadBuCharge);
-        final LinearLayout LiL = (LinearLayout)rootView.findViewById(R.id.LiL);
-        final RelativeLayout ReL = (RelativeLayout)rootView.findViewById(R.id.ReL);
+        RadGroServices = (RadioGroup)rootView.findViewById(R.id.RadGroServices);
+        RadBuConver = (RadioButton)rootView.findViewById(R.id.RadBuConver);
+        RadBuTalkMe = (RadioButton)rootView.findViewById(R.id.RadBuTalkme);
+        RadBuCharge = (RadioButton)rootView.findViewById(R.id.RadBuCharge);
+        LiL = (LinearLayout)rootView.findViewById(R.id.LiL);
         final Context context = getActivity();
 
         RadGroServices.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                loadData();
                 if (i == RadBuConver.getId()){
-
-                    FragmentManager manager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction transaction = manager.beginTransaction();
-                    transaction.replace(LiL.getId(),new LayoutConver(),"Conver");
-                    transaction.commit();
+                    if (type.equals("stc") || type.equals("mobily") || type.equals("none") || (type == null)  ) {
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction transaction = manager.beginTransaction();
+                        transaction.replace(LiL.getId(), new LayoutConverSTCAndMobily(), "Conver");
+                        transaction.commit();
+                    } else {
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction transaction = manager.beginTransaction();
+                        transaction.replace(LiL.getId(), new LayoutConverZain(), "Conver");
+                        transaction.commit();
+                    }
                 }
                 else if (i == RadBuTalkMe.getId()){
 
@@ -129,7 +139,8 @@ public class MainFragment extends Fragment {
 
         // Make sure that we are currently visible
         if (this.isVisible()) {
-            // If we are becoming invisible, then...
+            RadBuCharge.setChecked(true);
+
             if (isVisibleToUser) {
                 loadData();
             }
@@ -198,7 +209,7 @@ public class MainFragment extends Fragment {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
+                    loadData();
                     number = setVariablesBalance(context);
                     if (checkBalance(context)) {
                         startActivity(call(number));
@@ -226,26 +237,6 @@ public class MainFragment extends Fragment {
         transaction.replace(R.id.LiL,new LayoutCharge(),"Charge");
         transaction.commit();
     }
-    public static ViewGroup getParent(View view) {
-        return (ViewGroup)view.getParent();
-    }
 
-    public static void removeView(View view) {
-        ViewGroup parent = getParent(view);
-        if(parent != null) {
-            parent.removeView(view);
-        }
-    }
-
-    public static void replaceView(View currentView, View newView) {
-        ViewGroup parent = getParent(currentView);
-        if(parent == null) {
-            return;
-        }
-        final int index = parent.indexOfChild(currentView);
-        removeView(currentView);
-        removeView(newView);
-        parent.addView(newView, index);
-    }
 }
 
