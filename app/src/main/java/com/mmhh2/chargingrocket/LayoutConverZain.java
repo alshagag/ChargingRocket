@@ -170,6 +170,7 @@ public class LayoutConverZain extends Fragment {
     }
 
     public boolean checkConver(Context context) {
+        try {
         if (!type.equals("none")) {
             if (!numPhone.isEmpty()){
                 if (numPhone.length() == 10 ){
@@ -199,7 +200,11 @@ public class LayoutConverZain extends Fragment {
         }
 
 
-        return false;
+        return false; } catch (Exception ec){
+            Toast.makeText(context, getResources().getString(R.string.noneNetwork), Toast.LENGTH_SHORT).show();
+            return  false;
+
+        }
 
 
     }
