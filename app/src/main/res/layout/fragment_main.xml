@@ -2,101 +2,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mmhh2.chargingrocket.MainFragment"
     android:id="@+id/ReL">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/LiLMobile"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/ImVMobile"
-            android:background="@drawable/mobile"
-            android:contentDescription="Mobile"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/LiLMobile"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/LiL"></LinearLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LiLServices"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="86dp">
-
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|center">
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/services"
-            android:id="@+id/TVServices" />
+            android:id="@+id/LiLMobile">
 
-        <RadioGroup
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/ImVMobile"
+                android:background="@drawable/mobile" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/RadGroServices"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/RadBuCharge"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.3"
-                android:text="@string/charge"
-                android:checked="true" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/RadBuTalkme"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.3"
-                android:text="@string/talk_me" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/RadBuConver"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.3"
-                android:text="@string/conver" />
-
-        </RadioGroup>
-
-        <Button
-            android:layout_width="179dp"
-            android:layout_height="wrap_content"
-            android:text="@string/balance"
-            android:id="@+id/BuBalance"
-            android:layout_below="@+id/LiLNetworks"
+            android:layout_below="@+id/LiLMobile"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/buttonbalance"
-            android:textSize="20sp"
-            android:textColor="@color/abc_primary_text_disable_only_material_dark"
-            android:layout_marginTop="23dp"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/LiL"></LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LiLServices"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/services"
+                android:id="@+id/TVServices" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/RadGroServices"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/RadBuCharge"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.3"
+                    android:text="@string/charge"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/RadBuTalkme"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.3"
+                    android:text="@string/talk_me" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/RadBuConver"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.3"
+                    android:text="@string/conver" />
+
+            </RadioGroup>
+
+            <Button
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:text="@string/balance"
+                android:id="@+id/BuBalance"
+                android:background="@drawable/buttonbalance"
+                android:textSize="20sp"
+                android:textColor="@color/abc_primary_text_disable_only_material_dark"
+                android:layout_marginTop="23dp"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
