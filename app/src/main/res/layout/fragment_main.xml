@@ -34,9 +34,9 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/LiLMobile"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/LiL"></LinearLayout>
+            android:id="@+id/LiL">
+
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
