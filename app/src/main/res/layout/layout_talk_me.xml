@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LiLTalkMe"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/talk_me"
             android:id="@+id/TVTalkMe"
-            android:textColor="#5659C9"
+            android:textColor="@color/material_blue_grey_900"
             android:textStyle="bold"
             android:textSize="17dp"
             android:layout_marginRight="19dp"
@@ -45,6 +46,16 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LiLTalkMe"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,7 +65,15 @@
             android:textSize="19sp"
             android:textColor="@color/abc_primary_text_disable_only_material_dark"
             android:background="@drawable/stylenew"
-            android:layout_marginTop="23dp" />
+            android:layout_marginLeft="15dp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/BuTerms"
+            android:id="@+id/BuTalkTerms"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
     </LinearLayout>
 

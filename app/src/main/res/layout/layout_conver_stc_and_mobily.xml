@@ -17,11 +17,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/conver"
             android:id="@+id/TVConver"
-            android:layout_above="@+id/LiLConver"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="19dp"
-            android:textSize="17dp"
-            android:textColor="#5659C9"
+            android:textSize="17sp"
+            android:textColor="@color/material_blue_grey_900"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -67,17 +65,34 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LiLConver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/conver"
             android:id="@+id/BuConver"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/stylenew"
             android:textColor="@color/abc_primary_text_disable_only_material_dark"
             android:textSize="19sp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/BuTerms"
+            android:id="@+id/BuConverTerms"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
     </LinearLayout>
     <!--

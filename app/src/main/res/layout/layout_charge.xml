@@ -17,9 +17,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/charge"
             android:id="@+id/TVRecharge"
-            android:textColor="#5659C9"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:layout_marginRight="19dp"
             android:layout_gravity="right" />
 
@@ -44,18 +44,26 @@
                 android:id="@+id/EdTNumCard"
                 android:layout_weight="1" />
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lmBuCam"
+                android:src="@android:drawable/ic_menu_camera"
+                android:background="@drawable/camcolors" />
+
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recharge"
-            android:id="@+id/BuRecharge"
             android:layout_marginTop="23dp"
             android:background="@drawable/stylenew"
             android:textColor="@color/abc_tint_switch_thumb"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:text="@string/recharge" />
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
