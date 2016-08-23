@@ -19,6 +19,7 @@
     <string name="noneCardNum">لا يوجد رقم بطاقة</string>
     <string name="IDNumIncorrect">رقم الهوية غير صحيح</string>
     <string name="BuTerms">شروط الخدمة</string>
+    <string name="BuImport">استيراد..</string>
     <string name="action_settings"></string>
     <string name="preference_file_key">com.mmhh2.chargeingrocket.mainfragment.SAVEDATA</string>
     <string name="settings">الاعدادات</string>

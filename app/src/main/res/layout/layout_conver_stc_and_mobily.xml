@@ -24,7 +24,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/LiLNumPhon">
 
@@ -36,11 +36,21 @@
                 android:text="@string/numconfer" />
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/EdtNumPhon" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:text="@string/BuImport"
+                android:id="@+id/BuImport"
+                android:background="@drawable/buttonbalance"
+                android:textColor="@color/abc_primary_text_disable_only_material_dark"
+                android:textSize="11dp"
+                android:layout_weight="0.2" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,7 +86,7 @@
         android:layout_marginTop="19dp">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:text="@string/conver"
             android:id="@+id/BuConver"

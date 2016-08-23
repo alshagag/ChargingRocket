@@ -9,7 +9,8 @@
         android:id="@+id/LiL"
         android:gravity="center"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -17,7 +18,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/charge"
             android:id="@+id/TVRecharge"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#60646D"
             android:textStyle="bold"
             android:textSize="17sp"
             android:layout_marginRight="19dp"
@@ -27,7 +28,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LiLNumCard">
+            android:id="@+id/LiLNumCard"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,30 +39,33 @@
                 android:id="@+id/TVNumCard" />
 
             <EditText
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/EdTNumCard"
-                android:layout_weight="1" />
+                android:layout_weight="0.80" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lmBuCam"
-                android:src="@android:drawable/ic_menu_camera"
+                android:src="@drawable/ic_photo_camera_black_24dp"
+                android:layout_marginTop="15dp"
+                android:theme="@style/AppTheme"
                 android:background="@drawable/camcolors" />
 
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
             android:background="@drawable/stylenew"
             android:textColor="@color/abc_tint_switch_thumb"
             android:textSize="20sp"
-            android:text="@string/recharge" />
+            android:text="@string/recharge"
+            android:id="@+id/BuRecharge" />
 
     </LinearLayout>
 
